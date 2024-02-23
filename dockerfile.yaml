@@ -1,10 +1,10 @@
-FROM nginx:1.14.2
+version: '3'
 
-# Expose port 80 (same as containerPort in the YAML)
-EXPOSE 80
-
-# You can add any additional configuration or setup here if needed
-# For example, copying custom files or configuring NGINX settings
-
-# Start NGINX when the container runs
-CMD ["nginx", "-g", "daemon off;"]
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "9999:80"
+    volumes:
+      - /var/www/html:/usr/share/nginx/html
+    restart: always
