@@ -14,4 +14,4 @@ EXPOSE 80
 
 # Start Apache2 in the foreground
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-RUN curl localhost
+RUN curl http://localhost:80
