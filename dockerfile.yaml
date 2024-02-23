@@ -5,6 +5,4 @@ services:
     image: nginx:latest
     ports:
       - "9999:80"
-    volumes:
-      - /mera:/usr/share/nginx/html
-    restart: always
+   restart: always
