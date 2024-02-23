@@ -6,5 +6,5 @@ services:
     ports:
       - "9999:80"
     volumes:
-      - /var/www/html:/usr/share/nginx/html
+      - /mera:/usr/share/nginx/html
     restart: always
