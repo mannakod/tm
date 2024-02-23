@@ -1,10 +1,11 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx
-spec:
-  containers:
-  - name: nginx
-    image: nginx:1.14.2
-    ports:
-    - containerPort: 80
+# Use the official NGINX base image
+FROM nginx:1.14.2
+
+# Expose port 80 (same as containerPort in the YAML)
+EXPOSE 80
+
+# You can add any additional configuration or setup here if needed
+# For example, copying custom files or configuring NGINX settings
+
+# Start NGINX when the container runs
+CMD ["nginx", "-g", "daemon off;"]
