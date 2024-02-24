@@ -9,7 +9,7 @@ pipeline {
                     rm -rf tm
                     docker rm `docker ps --format "{{.ID}}"` -f
                    # docker images | grep mannakod/myfirstdocker | awk '{print $3}'
-                    docker  image rm `docker images | grep mannakod/myfirstdocker | awk '{print $3}'`
+                   # docker  image rm `docker images | grep mannakod/myfirstdocker | awk '{print $3}'` 
 		    git clone https://github.com/mannakod/tm.git
                     cd tm/
                     docker build -t mannakod/myfirstdocker:latest .
