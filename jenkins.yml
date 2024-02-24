@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('DockerBuilding') {
+            steps {
+                echo "Building Docker image using build command"
+                sh '''
+                    rm -rf tm
+                    docker rm `docker ps --format "{{.ID}}"` -f
+                    docker images | grep mannakod/myfirstdocker | awk '{print $3}'
+                    git clone https://github.com/mannakod/tm.git
+                    cd tm/
+                    docker build -t mannakod/myfirstdocker:latest .
+                    docker run -itd --name trust -p 80:80 mannakod/myfirstdocker
+                '''
+            }
+        }
+    }
+}
