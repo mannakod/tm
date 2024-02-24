@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: mannakod/myfirstdocker
-        image: 
+      - name: nginx
+        image: mannakod/myfirstdocker:latest
         ports:
         - containerPort: 80
