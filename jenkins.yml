@@ -7,7 +7,7 @@ pipeline {
                 echo "Building Docker image using build command"
                 sh '''
                     rm -rf tm
-                    docker rm `docker ps --format "{{.ID}}"` -f
+                    #docker rm `docker ps --format "{{.ID}}"` -f
                    # docker images | grep mannakod/myfirstdocker | awk '{print $3}'
                     docker  image rm `docker images | grep mannakod/myfirstdocker | awk '{print $3}'` 
 		    git clone https://github.com/mannakod/tm.git
