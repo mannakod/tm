@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: mannakod/myfirstdocker
-        image: mannakod/myfirstdocker
+        image: 
         ports:
         - containerPort: 80
