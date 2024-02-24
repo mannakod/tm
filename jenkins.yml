@@ -13,7 +13,7 @@ pipeline {
 		    git clone https://github.com/mannakod/tm.git
                     cd tm/
                     docker build -t mannakod/myfirstdocker:latest .
-		    docker login -username=mannakod -password=dckr_pat_Pwi7_C4bS3uWY3UT3WRPSlSZcYY 	
+		    docker login --username mannakod --password dckr_pat_Pwi7_C4bS3uWY3UT3WRPSlSZcYY 	
                     docker push mannakod/myfirstdocker:latest
 		    kubectl apply -f deploy.yml
 		    kubectl apply -f service.yml	
