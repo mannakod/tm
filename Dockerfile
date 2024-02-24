@@ -6,6 +6,7 @@ RUN apt-get update
 # Install Apache2
 RUN apt-get install -y apache2
 RUN apt install curl -y
+COPY index.html /var/www/html/
 # Set the ServerName in the main Apache2 configuration file
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
